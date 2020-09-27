@@ -1,0 +1,21 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [DugganPhilpLarsenCC3501Assignment.PrjPcb]
+   Generated File[PCB1PcbDoc.GTO]
+   Generated File[PCB1PcbDoc.GTP]
+   Generated File[PCB1PcbDoc.GTS]
+   Generated File[PCB1PcbDoc.GTL]
+   Generated File[PCB1PcbDoc.GBL]
+   Generated File[PCB1PcbDoc.GBS]
+   Generated File[PCB1PcbDoc.GBP]
+   Generated File[PCB1PcbDoc.GBO]
+   Generated File[PCB1PcbDoc.GKO]
+   Generated File[PCB1PcbDoc.RUL]
+   Generated File[PCB1PcbDoc.EXTREP]
+   Generated File[PCB1PcbDoc.REP]
+
+
+Files Generated   : 12
+Documents Printed : 0
+
+Finished Output Generation At 12:10:10 AM On 28/09/2020
