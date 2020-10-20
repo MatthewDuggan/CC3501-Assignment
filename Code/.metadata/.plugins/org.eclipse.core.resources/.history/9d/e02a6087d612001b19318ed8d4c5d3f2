@@ -95,36 +95,28 @@ int main(void)
 		if (ERR_OK != I2C_SendChar(0x43)){
 			// did not transmit address}
 		}
-		word recv2;
-		if (ERR_OK != I2C_RecvBlock(&gyro_data, 6, &recv2)) {
+		word recv;
+		if (ERR_OK != I2C_RecvBlock(&gyro_data, 6, &recv)) {
 			// did not read the data
 		} else {
 			// read successfully
 		}
 
-		// convert data to signed number TODO: use all 16 bits
-		signed char accX = (signed char)acc_data[0];
-		signed char accY = (signed char)acc_data[2];
-		signed char accZ = (signed char)acc_data[4];
-		signed char gyroX = (signed char)gyro_data[0];
-		signed char gyroY = (signed char)gyro_data[2];
-		signed char gyroZ = (signed char)gyro_data[4];
-
-		// convert accelerometer data to string
+		// convert accelerometer data to string TODO: use all 16 bits
 		char accXstr[5];
 		char accYstr[5];
 		char accZstr[5];
-		sprintf(accXstr, "%d", accX);
-		sprintf(accYstr, "%d", accY);
-		sprintf(accZstr, "%d", accZ);
+		sprintf(accXstr, "%d", (signed char)acc_data[0]);
+		sprintf(accYstr, "%d", (signed char)acc_data[2]);
+		sprintf(accZstr, "%d", (signed char)acc_data[4]);
 
-		// convert gyroscope data to string
+		// convert gyroscope data to string TODO: use all 16 bits
 		char gyroXstr[5];
 		char gyroYstr[5];
 		char gyroZstr[5];
-		sprintf(gyroXstr, "%d", gyroX);
-		sprintf(gyroYstr, "%d", gyroY);
-		sprintf(gyroZstr, "%d", gyroZ);
+		sprintf(gyroXstr, "%d", (signed char)gyro_data[0]);
+		sprintf(gyroYstr, "%d", (signed char)gyro_data[2]);
+		sprintf(gyroZstr, "%d", (signed char)gyro_data[4]);
 
 		// send gyro data
 		send_string("\r\nX = ");
