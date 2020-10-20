@@ -94,9 +94,9 @@ int main(void)
 		char Xstr[5];
 		char Ystr[5];
 		char Zstr[5];
-		sprintf(Xstr, "%d", (signed char)data[0]);
-		sprintf(Ystr, "%d", (signed char)data[2]);
-		sprintf(Zstr, "%d", (signed char)data[4]);
+		sprintf(Xstr, "%d", (signed char)data[1]);
+		sprintf(Ystr, "%d", (signed char)data[3]);
+		sprintf(Zstr, "%d", (signed char)data[5]);
 
 		// send acc data
 		send_string("\r\nX = ");

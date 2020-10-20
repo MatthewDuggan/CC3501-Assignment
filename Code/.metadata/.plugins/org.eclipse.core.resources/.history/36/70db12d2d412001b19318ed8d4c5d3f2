@@ -90,22 +90,8 @@ int main(void)
 			// read successfully
 		}
 
-		// convert
-		char Xstr[5];
-		char Ystr[5];
-		char Zstr[5];
-		sprintf(Xstr, "%d", (signed char)data[0]);
-		sprintf(Ystr, "%d", (signed char)data[2]);
-		sprintf(Zstr, "%d", (signed char)data[4]);
-
-		// send acc data
-		send_string("\r\nX = ");
-		send_string(Xstr);
-		send_string(", Y = ");
-		send_string(Ystr);
-		send_string(", Z = ");
-		send_string(Zstr);
-
+		send_string("\r\n");
+		send_string("\r\n");
 
 		// wait for .1 second
 		int time;

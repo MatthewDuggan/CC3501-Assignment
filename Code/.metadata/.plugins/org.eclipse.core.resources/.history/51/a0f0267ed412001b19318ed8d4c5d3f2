@@ -73,39 +73,8 @@ int main(void)
 
 	}
 
-	// TURN ON IMU by passing 0 to reg 0x6B
-	char msg[2] = {0x6B, 0};
-	word sent;
-
 	for(;;){
-		// READ RAW DATA FROM ACCELEROMETER
-		unsigned char data[6];
-		if (ERR_OK != I2C_SendChar(0x3B)){
-			// did not transmit address}
-		}
-		word recv;
-		if (ERR_OK != I2C_RecvBlock(&data, 7, &recv)) {
-			// did not read the data
-		} else {
-			// read successfully
-		}
-
-		// convert
-		char Xstr[5];
-		char Ystr[5];
-		char Zstr[5];
-		sprintf(Xstr, "%d", (signed char)data[0]);
-		sprintf(Ystr, "%d", (signed char)data[2]);
-		sprintf(Zstr, "%d", (signed char)data[4]);
-
-		// send acc data
-		send_string("\r\nX = ");
-		send_string(Xstr);
-		send_string(", Y = ");
-		send_string(Ystr);
-		send_string(", Z = ");
-		send_string(Zstr);
-
+		send_string("\r\nHello!");
 
 		// wait for .1 second
 		int time;
