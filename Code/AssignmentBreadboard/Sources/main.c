@@ -78,7 +78,7 @@ int main(void)
 	word sent;
 
 	for(;;){
-		// READ RAW DATA FROM ACCELEROMETER
+		// READ RAW DATA FROM ACCELEROMETER TODO: when changing to PCB - register addresses will change, slave addresses will change (one for gyro, one for acc/mag)
 		unsigned char acc_data[6];
 		if (ERR_OK != I2C_SendChar(0x3B)){
 			// did not transmit address}
@@ -102,7 +102,7 @@ int main(void)
 			// read successfully
 		}
 
-		// convert data to signed number TODO: use all 16 bits
+		// convert data to signed number TODO: use all bits
 		signed char accX = (signed char)acc_data[0];
 		signed char accY = (signed char)acc_data[2];
 		signed char accZ = (signed char)acc_data[4];
@@ -134,28 +134,29 @@ int main(void)
 		send_string(", Z = ");
 		send_string(gyroZstr);
 
+		// TODO: convert to pitch/yaw/roll
 
-		// wait for .1 second
+
+		// wait for .1 second TODO: get delay working properly - just passes straight through
 		int time;
 		Timer_Reset();
 		do {
 			Timer_GetTimeMS(&time);
-		} while (time < 100);
+		} while (time < 1000);
 		Timer_Reset();
-
 	}
 
 
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-#ifdef PEX_RTOS_START
-	PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-#endif
-	/*** End of RTOS startup code.  ***/
-	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-	for(;;){}
-	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */
