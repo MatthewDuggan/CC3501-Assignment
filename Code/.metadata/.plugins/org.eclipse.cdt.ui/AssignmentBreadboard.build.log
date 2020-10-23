@@ -1,13 +1,13 @@
-10:40:37 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+16:37:04 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
 make all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
 ../Sources/main.c: In function 'main':
-../Sources/main.c:117:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+../Sources/main.c:118:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
    sprintf(accXstr, "%d", accX);
    ^
-../Sources/main.c:117:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+../Sources/main.c:118:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
 Finished building: ../Sources/main.c
  
 Building target: AssignmentBreadboard.elf
@@ -16,5 +16,5 @@ arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -
 Finished building target: AssignmentBreadboard.elf
  
 
-10:40:38 Build Finished (took 571ms)
+16:37:05 Build Finished (took 533ms)
 

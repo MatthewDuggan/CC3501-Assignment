@@ -55,6 +55,7 @@ int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
 	/* Write your local variable definition here */
+	int time;
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 	PE_low_level_init();
@@ -127,36 +128,37 @@ int main(void)
 		sprintf(gyroZstr, "%d", gyroZ);
 
 		// send gyro data
-		send_string("\r\nX = ");
+		send_string("\r\n");
 		send_string(gyroXstr);
-		send_string(", Y = ");
+		send_string("/");
 		send_string(gyroYstr);
-		send_string(", Z = ");
+		send_string("/");
 		send_string(gyroZstr);
 
 		// TODO: convert to pitch/yaw/roll
 
 
 		// wait for .1 second TODO: get delay working properly - just passes straight through
-		int time;
+
 		Timer_Reset();
+
 		do {
 			Timer_GetTimeMS(&time);
-		} while (time < 1000);
-		Timer_Reset();
+		} while (time < 15000);
+		//Timer_Reset();
 	}
 
 
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-  #ifdef PEX_RTOS_START
-    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-  #endif
-  /*** End of RTOS startup code.  ***/
-  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){}
-  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+#ifdef PEX_RTOS_START
+	PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+#endif
+	/*** End of RTOS startup code.  ***/
+	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+	for(;;){}
+	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */

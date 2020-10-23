@@ -19,16 +19,16 @@
         <Line>PE_Const</Line>
         <Line>IO_Map</Line>
       </GenSharedModules>
-      <ShrdHeaderAge0>1364546091</ShrdHeaderAge0>
+      <ShrdHeaderAge0>1364689308</ShrdHeaderAge0>
       <ShrdCodeAge0>-1</ShrdCodeAge0>
       <ShrdAsemblAge0>-1</ShrdAsemblAge0>
-      <ShrdHeaderAge1>1364546091</ShrdHeaderAge1>
+      <ShrdHeaderAge1>1364689308</ShrdHeaderAge1>
       <ShrdCodeAge1>-1</ShrdCodeAge1>
       <ShrdAsemblAge1>-1</ShrdAsemblAge1>
-      <ShrdHeaderAge2>1364546091</ShrdHeaderAge2>
+      <ShrdHeaderAge2>1364689308</ShrdHeaderAge2>
       <ShrdCodeAge2>-1</ShrdCodeAge2>
       <ShrdAsemblAge2>-1</ShrdAsemblAge2>
-      <ShrdHeaderAge3>1364546091</ShrdHeaderAge3>
+      <ShrdHeaderAge3>1364689308</ShrdHeaderAge3>
       <ShrdCodeAge3>-1</ShrdCodeAge3>
       <ShrdAsemblAge3>-1</ShrdAsemblAge3>
       <GenExtraFiles lines_count="14">
@@ -49,10 +49,10 @@
       </GenExtraFiles>
       <GenExtraFileSrcDir12>lib\Kinetis\startup\</GenExtraFileSrcDir12>
       <GenExtraFileSrcDir8>Repositories\lib\doxygen\</GenExtraFileSrcDir8>
-      <XtraAge9>1364546091</XtraAge9>
-      <XtraAge10>1364546091</XtraAge10>
-      <XtraAge12>1364546091</XtraAge12>
-      <XtraAge13>1364546091</XtraAge13>
+      <XtraAge9>1364689308</XtraAge9>
+      <XtraAge10>1364689308</XtraAge10>
+      <XtraAge12>1364689308</XtraAge12>
+      <XtraAge13>1364689308</XtraAge13>
       <GenExtraFileType13>4</GenExtraFileType13>
       <GenExtraFileType12>5</GenExtraFileType12>
       <GenExtraFileType11>4</GenExtraFileType11>
@@ -458,8 +458,8 @@
     <GenComponentVersion>01.009</GenComponentVersion>
     <GenDriverVersion>01.04</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1364546091</HeaderAge>
-    <CodeAge>1364546091</CodeAge>
+    <HeaderAge>1364689308</HeaderAge>
+    <CodeAge>1364689308</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>11</GenNumMethods>
     <SetClockConfiguration>false</SetClockConfiguration>
@@ -538,8 +538,8 @@
     <GenComponentVersion>02.061</GenComponentVersion>
     <GenDriverVersion>03.22</GenDriverVersion>
     <GenEventModule />
-    <HeaderAge>1364546091</HeaderAge>
-    <CodeAge>1364546091</CodeAge>
+    <HeaderAge>1364689308</HeaderAge>
+    <CodeAge>1364689308</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>16</GenNumMethods>
     <CRLF>true</CRLF>
@@ -710,8 +710,8 @@
       <GenComponentVersion>02.611</GenComponentVersion>
       <GenDriverVersion>01.01</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1364546091</HeaderAge>
-      <CodeAge>1364546091</CodeAge>
+      <HeaderAge>1364689308</HeaderAge>
+      <CodeAge>1364689308</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>24</GenNumMethods>
       <Enable>false</Enable>
@@ -857,8 +857,8 @@
         <GenComponentVersion>01.188</GenComponentVersion>
         <GenDriverVersion>01.12</GenDriverVersion>
         <GenEventModule>Events</GenEventModule>
-        <HeaderAge>1364546091</HeaderAge>
-        <CodeAge>1364546091</CodeAge>
+        <HeaderAge>1364689308</HeaderAge>
+        <CodeAge>1364689308</CodeAge>
         <AsemblAge>-1</AsemblAge>
         <GenNumMethods>36</GenNumMethods>
         <Init>true</Init>
@@ -1030,8 +1030,8 @@
     <GenComponentVersion>02.611</GenComponentVersion>
     <GenDriverVersion>01.01</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1364546091</HeaderAge>
-    <CodeAge>1364546091</CodeAge>
+    <HeaderAge>1364689308</HeaderAge>
+    <CodeAge>1364689308</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>24</GenNumMethods>
     <Enable>false</Enable>
@@ -1233,8 +1233,8 @@
       <GenComponentVersion>01.188</GenComponentVersion>
       <GenDriverVersion>01.12</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1364546091</HeaderAge>
-      <CodeAge>1364546091</CodeAge>
+      <HeaderAge>1364689308</HeaderAge>
+      <CodeAge>1364689308</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>36</GenNumMethods>
       <Init>true</Init>
@@ -1391,8 +1391,8 @@
     <GenComponentVersion>01.287</GenComponentVersion>
     <GenDriverVersion>01.01</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1364546091</HeaderAge>
-    <CodeAge>1364546091</CodeAge>
+    <HeaderAge>1364689308</HeaderAge>
+    <CodeAge>1364689308</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>22</GenNumMethods>
     <Enable>false</Enable>
@@ -1580,8 +1580,8 @@
       <GenComponentVersion>01.016</GenComponentVersion>
       <GenDriverVersion>01.07</GenDriverVersion>
       <GenEventModule>Events</GenEventModule>
-      <HeaderAge>1364546091</HeaderAge>
-      <CodeAge>1364546091</CodeAge>
+      <HeaderAge>1364689308</HeaderAge>
+      <CodeAge>1364689308</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>33</GenNumMethods>
       <Init>true</Init>
@@ -1830,8 +1830,8 @@
     <GenComponentVersion>02.070</GenComponentVersion>
     <GenDriverVersion>01.00</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1364546091</HeaderAge>
-    <CodeAge>1364546091</CodeAge>
+    <HeaderAge>1364689308</HeaderAge>
+    <CodeAge>1364689308</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>10</GenNumMethods>
     <Enable>false</Enable>
@@ -1904,8 +1904,8 @@
       <GenComponentVersion>01.007</GenComponentVersion>
       <GenDriverVersion>01.01</GenDriverVersion>
       <GenEventModule />
-      <HeaderAge>1364546091</HeaderAge>
-      <CodeAge>1364546091</CodeAge>
+      <HeaderAge>1364689308</HeaderAge>
+      <CodeAge>1364689308</CodeAge>
       <AsemblAge>-1</AsemblAge>
       <GenNumMethods>11</GenNumMethods>
       <Init>true</Init>
@@ -2004,8 +2004,8 @@
     <GenComponentVersion>01.164</GenComponentVersion>
     <GenDriverVersion>01.11</GenDriverVersion>
     <GenEventModule>Events</GenEventModule>
-    <HeaderAge>1364546091</HeaderAge>
-    <CodeAge>1364546091</CodeAge>
+    <HeaderAge>1364689308</HeaderAge>
+    <CodeAge>1364689308</CodeAge>
     <AsemblAge>-1</AsemblAge>
     <GenNumMethods>22</GenNumMethods>
     <Init>true</Init>
