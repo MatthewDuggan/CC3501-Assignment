@@ -111,7 +111,7 @@ int main(void)
 		signed char gyroY = (signed char)gyro_data[2];
 		signed char gyroZ = (signed char)gyro_data[4];
 
-		// convert accelerometer data to string
+		// convert accelerometer data to string TODO: put in function
 		char accXstr[5];
 		char accYstr[5];
 		char accZstr[5];
