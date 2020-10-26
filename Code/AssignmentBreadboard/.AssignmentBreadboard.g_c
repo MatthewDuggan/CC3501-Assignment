@@ -381,7 +381,7 @@
     </GenFiles>
     <SignalListFile>Documentation\AssignmentBreadboard_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>8</ProjectModificationStamp>
+    <ProjectModificationStamp>9</ProjectModificationStamp>
   </Options>
   <CpuID_2>
     <Generated>false</Generated>

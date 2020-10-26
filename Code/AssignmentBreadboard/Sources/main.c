@@ -57,6 +57,9 @@ int main(void)
 {
 	/* Write your local variable definition here */
 	int time;
+	Timer_GetTimeMS(&time);
+	int dt; // change in time
+	int previousTime = time;
 
 	float PI = 3.14159265359;
 
@@ -106,6 +109,8 @@ int main(void)
 			// read successfully
 		}
 
+		// TODO: may have to change all numbers including time to float?
+
 		// convert data to signed number TODO: use all bits
 		float accX = acc_data[0] * 1.0;
 		float accY = acc_data[2] * 1.0;
@@ -118,9 +123,21 @@ int main(void)
 		int accPitch = atan2(accY, accZ) * (180/PI); // deg
 		int accRoll = atan2(accX, accZ) * (180/PI);
 
-		// TODO: convert acc data to pitch and roll using eg. arctan(accX/accZ)
+		// convert gyro data to yaw/pitch/roll
+		// TODO: keep track of time and get dt
+		Timer_GetTimeMS(&time);
+		dt = time - previousTime;
+		previousTime = time;
+		Term_SendNum(dt);
+		Term_SendStr("\r\n");
+		// TODO: convert gyro from angular velocity to angle
+		// TODO: convert to yaw/pitch/roll
+
+
 		// TODO: convert gyro data to yaw/pitch/roll
-		// TODO: combine the data
+		// TODO: combine the acc & gyro data
+
+		// TODO: Get magnetometer data and convert to yaw (PCB)
 
 		// convert accelerometer data to string TODO: put in function
 
@@ -171,24 +188,24 @@ int main(void)
 		// wait for .1 second TODO: get delay working properly - just passes straight through
 		Timer_GetTimeMS(&time);
 		int currentTime = time;
-		Timer_Reset();
 		do {
 			Timer_GetTimeMS(&time);
-		} while ((time - currentTime) < 100);
-		//Timer_Reset();
+		} while ((time - currentTime) < 1000);
+
+
 	}
 
 
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-#ifdef PEX_RTOS_START
-	PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-#endif
-	/*** End of RTOS startup code.  ***/
-	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-	for(;;){}
-	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */

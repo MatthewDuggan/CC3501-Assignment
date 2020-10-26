@@ -88,17 +88,17 @@
       <File Name="Static_Code/PDD/GPIO_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428256" FileType="1048576" />
       <File Name="Generated_Code/Timer.c" FileDate="2020-10-20, 22:50:35" FileAge="1603198235475" FileType="45637" CompNumb="19" />
       <File Name="Generated_Code/Inhr1.c" FileDate="2020-10-20, 22:13:43" FileAge="1603196023707" FileType="45637" CompNumb="6" />
-      <File Name="Sources/main.c" FileDate="2020-10-25, 22:30:43" FileAge="1603629043180" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2020-10-26, 17:35:10" FileAge="1603697710165" FileType="128" />
       <File Name="Static_Code/PDD/LPTMR_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428276" FileType="1048576" />
       <File Name="Documentation/doxygen/ASerialLdd1_component.txt" FileDate="2020-10-20, 22:13:43" FileAge="1603196023745" FileType="45637" CompNumb="7" />
       <File Name="Static_Code/PDD/WDOG_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428454" FileType="1048576" />
       <File Name="Static_Code/PDD/DMAMUX_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428082" FileType="1048576" />
-      <File Name="Documentation/AssignmentBreadboard_SIGNALS.txt" FileDate="2020-10-25, 22:30:43" FileAge="1603629043223" FileType="3072" />
+      <File Name="Documentation/AssignmentBreadboard_SIGNALS.txt" FileDate="2020-10-26, 17:35:10" FileAge="1603697710215" FileType="3072" />
       <File Name="Static_Code/PDD/I2C_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428266" FileType="1048576" />
       <File Name="Static_Code/PDD/PIT_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428351" FileType="1048576" />
       <File Name="Generated_Code/PE_Types.h" FileDate="2020-10-20, 22:50:35" FileAge="1603198235642" FileType="45637" />
       <File Name="Static_Code/PDD/RTC_PDD.h" FileDate="2020-10-20, 21:30:28" FileAge="1603193428370" FileType="1048576" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>12</CodeGenReference>
+  <CodeGenReference>13</CodeGenReference>
 </CodeGenerationInfo>
