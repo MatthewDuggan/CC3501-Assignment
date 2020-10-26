@@ -169,12 +169,12 @@ int main(void)
 
 
 		// wait for .1 second TODO: get delay working properly - just passes straight through
-		Timer_GetTimeMS(&time);
-		int currentTime = time;
+
 		Timer_Reset();
+
 		do {
 			Timer_GetTimeMS(&time);
-		} while ((time - currentTime) < 100);
+		} while (time < 100);
 		//Timer_Reset();
 	}
 
