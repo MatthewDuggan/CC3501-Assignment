@@ -49,6 +49,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <string.h>
+#include <math.h>
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
@@ -56,6 +57,8 @@ int main(void)
 {
 	/* Write your local variable definition here */
 	int time;
+
+	float PI = 3.14159265359;
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 	PE_low_level_init();
@@ -104,14 +107,23 @@ int main(void)
 		}
 
 		// convert data to signed number TODO: use all bits
-		signed char accX = (signed char)acc_data[0];
-		signed char accY = (signed char)acc_data[2];
-		signed char accZ = (signed char)acc_data[4];
+		float accX = acc_data[0] * 1.0;
+		float accY = acc_data[2] * 1.0;
+		float accZ = acc_data[4] * 1.0;
 		signed char gyroX = (signed char)gyro_data[0];
 		signed char gyroY = (signed char)gyro_data[2];
 		signed char gyroZ = (signed char)gyro_data[4];
 
+		// convert accelerometer data to pitch and roll TODO: get working correctly; currently only works properly tilting in one direction either way for pitch/roll
+		int accPitch = atan2(accY, accZ) * (180/PI); // deg
+		int accRoll = atan2(accX, accZ) * (180/PI);
+
+		// TODO: convert acc data to pitch and roll using eg. arctan(accX/accZ)
+		// TODO: convert gyro data to yaw/pitch/roll
+		// TODO: combine the data
+
 		// convert accelerometer data to string TODO: put in function
+
 		char accXstr[5];
 		char accYstr[5];
 		char accZstr[5];
@@ -127,7 +139,24 @@ int main(void)
 		sprintf(gyroYstr, "%d", gyroY);
 		sprintf(gyroZstr, "%d", gyroZ);
 
-		// send gyro data
+		// convert other data to string
+		char pitchStr[5];
+		char rollStr[5];
+		sprintf(pitchStr, "%d", accPitch);
+		sprintf(rollStr, "%d", accRoll);
+
+		// send data TODO: convert creating & sending string into a separate function
+		//		send_string("\r\n");
+		//		send_string(accXstr);
+		//		send_string("/");
+		//		send_string(accYstr);
+		//		send_string("/");
+		//		send_string(accZstr);
+		//		send_string("/");
+		//		send_string(pitchStr);
+		//		send_string("/");
+		//		send_string(rollStr);
+
 		send_string("\r\n");
 		send_string(gyroXstr);
 		send_string("/");
@@ -135,7 +164,8 @@ int main(void)
 		send_string("/");
 		send_string(gyroZstr);
 
-		// TODO: convert to pitch/yaw/roll
+
+
 
 
 		// wait for .1 second TODO: get delay working properly - just passes straight through
@@ -144,7 +174,7 @@ int main(void)
 
 		do {
 			Timer_GetTimeMS(&time);
-		} while (time < 15000);
+		} while (time < 100);
 		//Timer_Reset();
 	}
 
