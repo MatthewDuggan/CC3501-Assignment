@@ -57,7 +57,7 @@ int main(void)
 {
 	/* Write your local variable definition here */
 	int time;
-	Timer_GetTimeMS(&time);
+
 	int dt; // change in time
 	int previousTime = time;
 
@@ -79,6 +79,9 @@ int main(void)
 		}
 
 	}
+
+	Timer_Reset(); // TODO: Timer returns 16 bit uint, so can only run for 65 seconds using this method
+
 
 	// TURN ON IMU by passing 0 to reg 0x6B
 	char msg[2] = {0x6B, 0};
@@ -109,17 +112,15 @@ int main(void)
 			// read successfully
 		}
 
-		// TODO: may have to change all numbers including time to float?
-
 		// convert data to signed number TODO: use all bits
-		float accX = acc_data[0] * 1.0;
-		float accY = acc_data[2] * 1.0;
-		float accZ = acc_data[4] * 1.0;
-		signed char gyroX = (signed char)gyro_data[0];
+		float accX = (signed char)acc_data[0] * 1.0;
+		float accY = (signed char)acc_data[2] * 1.0;
+		float accZ = (signed char)acc_data[4] * 1.0;
+		signed char gyroX = (signed char)gyro_data[0]; // TODO: convert gyro and all other data to floats; fix string conversion down lower
 		signed char gyroY = (signed char)gyro_data[2];
 		signed char gyroZ = (signed char)gyro_data[4];
 
-		// convert accelerometer data to pitch and roll TODO: get working correctly; currently only works properly tilting in one direction either way for pitch/roll
+		// convert accelerometer data to pitch and roll TODO: get working correctly
 		int accPitch = atan2(accY, accZ) * (180/PI); // deg
 		int accRoll = atan2(accX, accZ) * (180/PI);
 
@@ -128,8 +129,7 @@ int main(void)
 		Timer_GetTimeMS(&time);
 		dt = time - previousTime;
 		previousTime = time;
-		Term_SendNum(dt);
-		Term_SendStr("\r\n");
+
 		// TODO: convert gyro from angular velocity to angle
 		// TODO: convert to yaw/pitch/roll
 
@@ -141,12 +141,12 @@ int main(void)
 
 		// convert accelerometer data to string TODO: put in function
 
-		char accXstr[5];
-		char accYstr[5];
-		char accZstr[5];
-		sprintf(accXstr, "%d", accX);
-		sprintf(accYstr, "%d", accY);
-		sprintf(accZstr, "%d", accZ);
+		char accXstr[10];
+		char accYstr[10];
+		char accZstr[10];
+		sprintf(accXstr, "%.2f", accX); // TODO
+		sprintf(accYstr, "%.2f", accY);
+		sprintf(accZstr, "%.2f", accZ);
 
 		// convert gyroscope data to string
 		char gyroXstr[5];
@@ -163,34 +163,37 @@ int main(void)
 		sprintf(rollStr, "%d", accRoll);
 
 		// send data TODO: convert creating & sending string into a separate function
-		//		send_string("\r\n");
-		//		send_string(accXstr);
-		//		send_string("/");
-		//		send_string(accYstr);
-		//		send_string("/");
-		//		send_string(accZstr);
-		//		send_string("/");
-		//		send_string(pitchStr);
-		//		send_string("/");
-		//		send_string(rollStr);
+				send_string("\r\n");
+				send_string(accXstr);
+				send_string("/");
+				send_string(accYstr);
+				send_string("/");
+				send_string(accZstr);
+				send_string("/");
+				send_string(pitchStr);
+				send_string("/");
+				send_string(rollStr);
 
-		send_string("\r\n");
-		send_string(gyroXstr);
-		send_string("/");
-		send_string(gyroYstr);
-		send_string("/");
-		send_string(gyroZstr);
+//		send_string("\r\n");
+//		send_string(gyroXstr);
+//		send_string("/");
+//		send_string(gyroYstr);
+//		send_string("/");
+//		send_string(gyroZstr);
+
+		Term_SendFloatNum(accPitch);
+		Term_SendStr("\r\n");
 
 
 
 
 
-		// wait for .1 second TODO: get delay working properly - just passes straight through
+		// wait for .05 second
 		Timer_GetTimeMS(&time);
 		int currentTime = time;
 		do {
 			Timer_GetTimeMS(&time);
-		} while ((time - currentTime) < 1000);
+		} while ((time - currentTime) < 50);
 
 
 	}
