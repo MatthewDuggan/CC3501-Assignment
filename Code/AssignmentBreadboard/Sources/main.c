@@ -116,13 +116,13 @@ int main(void)
 		float accX = (signed char)acc_data[0] * 1.0;
 		float accY = (signed char)acc_data[2] * 1.0;
 		float accZ = (signed char)acc_data[4] * 1.0;
-		signed char gyroX = (signed char)gyro_data[0]; // TODO: convert gyro and all other data to floats; fix string conversion down lower
-		signed char gyroY = (signed char)gyro_data[2];
-		signed char gyroZ = (signed char)gyro_data[4];
+		float gyroX = (signed char)gyro_data[0] * 1.0; // TODO: convert from raw to deg/s
+		float gyroY = (signed char)gyro_data[2] * 1.0;
+		float gyroZ = (signed char)gyro_data[4] * 1.0;
 
 		// convert accelerometer data to pitch and roll TODO: get working correctly
 		int accPitch = atan2(accY, accZ) * (180/PI); // deg
-		int accRoll = atan2(accX, accZ) * (180/PI);
+		int accRoll = (-1) * atan2(accX, accZ) * (180/PI);
 
 		// convert gyro data to yaw/pitch/roll
 		// TODO: keep track of time and get dt
@@ -163,26 +163,19 @@ int main(void)
 		sprintf(rollStr, "%d", accRoll);
 
 		// send data TODO: convert creating & sending string into a separate function
-				send_string("\r\n");
-				send_string(accXstr);
-				send_string("/");
-				send_string(accYstr);
-				send_string("/");
-				send_string(accZstr);
-				send_string("/");
-				send_string(pitchStr);
-				send_string("/");
-				send_string(rollStr);
+		send_string("\r\n");
+		send_string(pitchStr);
+		send_string("/");
+		send_string(rollStr);
+		send_string("/");
+		send_string(accZstr);
 
-//		send_string("\r\n");
-//		send_string(gyroXstr);
-//		send_string("/");
-//		send_string(gyroYstr);
-//		send_string("/");
-//		send_string(gyroZstr);
 
-		Term_SendFloatNum(accPitch);
 		Term_SendStr("\r\n");
+		Term_SendNum(accPitch);
+		Term_SendStr("/");
+		Term_SendNum(accRoll);
+		Term_SendStr("/");
 
 
 
@@ -201,14 +194,14 @@ int main(void)
 
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-  #ifdef PEX_RTOS_START
-    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-  #endif
-  /*** End of RTOS startup code.  ***/
-  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){}
-  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+#ifdef PEX_RTOS_START
+	PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+#endif
+	/*** End of RTOS startup code.  ***/
+	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+	for(;;){}
+	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */

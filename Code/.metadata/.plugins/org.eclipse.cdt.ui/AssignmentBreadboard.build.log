@@ -1,4 +1,4 @@
-19:21:04 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+21:10:21 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
 make all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
@@ -16,5 +16,5 @@ arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -
 Finished building target: AssignmentBreadboard.elf
  
 
-19:21:05 Build Finished (took 963ms)
+21:10:23 Build Finished (took 1s.150ms)
 
