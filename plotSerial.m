@@ -19,12 +19,7 @@ while(1)
    data = strsplit(strip(line),"/");
    pitch(i) = str2double(data(1));
    roll(i) = str2double(data(2));
-   %disp(data);
-   %disp("Pitch: " + pitch(i) + "; Roll: " + roll(i));
-   %accX(i) = str2double(data(2));
-   %plot(pitch);
- 
-   
+      
    plot(pitch);
    hold on
    plot(roll)

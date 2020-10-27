@@ -1,0 +1,229 @@
+/* ###################################################################
+ **     Filename    : main.c
+ **     Project     : AssignmentBreadboard
+ **     Processor   : MK20DN128VLH5
+ **     Version     : Driver 01.01
+ **     Compiler    : GNU C Compiler
+ **     Date/Time   : 2020-10-20, 21:30, # CodeGen: 0
+ **     Abstract    :
+ **         Main module.
+ **         This module contains user's application code.
+ **     Settings    :
+ **     Contents    :
+ **         No public methods
+ **
+ ** ###################################################################*/
+/*!
+ ** @file main.c
+ ** @version 01.01
+ ** @brief
+ **         Main module.
+ **         This module contains user's application code.
+ */
+/*!
+ **  @addtogroup main_module main module documentation
+ **  @{
+ */
+/* MODULE main */
+
+
+/* Including needed modules to compile this module/procedure */
+#include "Cpu.h"
+#include "Events.h"
+#include "Term.h"
+#include "Inhr1.h"
+#include "ASerialLdd1.h"
+#include "BTUART.h"
+#include "ASerialLdd2.h"
+#include "I2C.h"
+#include "IntI2cLdd1.h"
+#include "Timer.h"
+#include "RealTimeLdd1.h"
+#include "TU1.h"
+#include "CS1.h"
+/* Including shared modules, which are used for whole project */
+#include "PE_Types.h"
+#include "PE_Error.h"
+#include "PE_Const.h"
+#include "IO_Map.h"
+/* User includes (#include below this line is not maintained by Processor Expert) */
+#include <stddef.h>
+#include <stdbool.h>
+#include <string.h>
+#include <math.h>
+
+/*lint -save  -e970 Disable MISRA rule (6.3) checking. */
+int main(void)
+/*lint -restore Enable MISRA rule (6.3) checking. */
+{
+	/* Write your local variable definition here */
+	int time;
+
+	int dt; // change in time
+	int previousTime = time;
+	int gyroPitch = 0;
+	int gyroRoll = 0; // assume starting flat
+
+	float PI = 3.14159265359;
+
+	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+	PE_low_level_init();
+	/*** End of Processor Expert internal initialization.                    ***/
+
+	/* Write your code here */
+	void send_string(const char *str){
+		size_t len, i;
+		len = strlen(str);
+		byte err;
+		for (i = 0; i < len; i += 1){
+			do {
+				err = BTUART_SendChar(str[i]);
+			} while (err != ERR_OK);
+		}
+
+	}
+
+	Timer_Reset(); // TODO: Timer returns 16 bit uint, so can only run for 65 seconds using this method
+
+
+	// TURN ON IMU by passing 0 to reg 0x6B
+	char msg[2] = {0x6B, 0};
+	word sent;
+
+	for(;;){
+		// READ RAW DATA FROM ACCELEROMETER TODO: when changing to PCB - register addresses will change, slave addresses will change (one for gyro, one for acc/mag)
+		unsigned char acc_data[6];
+		if (ERR_OK != I2C_SendChar(0x3B)){
+			// did not transmit address}
+		}
+		word recv;
+		if (ERR_OK != I2C_RecvBlock(&acc_data, 6, &recv)) {
+			// did not read the data
+		} else {
+			// read successfully
+		}
+
+		// READ RAW DATA FROM GYROSCOPE - TODO: put these in a function
+		unsigned char gyro_data[6];
+		if (ERR_OK != I2C_SendChar(0x43)){
+			// did not transmit address}
+		}
+		word recv2;
+		if (ERR_OK != I2C_RecvBlock(&gyro_data, 6, &recv2)) {
+			// did not read the data
+		} else {
+			// read successfully
+		}
+
+		// convert data to signed number TODO: use all bits for accelerometer
+		float accX = (signed char)acc_data[0] * 1.0;
+		float accY = (signed char)acc_data[2] * 1.0;
+		float accZ = (signed char)acc_data[4] * 1.0;
+		// 131 converts to deg/s as per section 4.2 of MPU6050 datasheet
+		float gyroX = 1.0 + (signed short)(gyro_data[0]<<8 | gyro_data[1])/131.0; // ~-1deg/s error
+		float gyroY = (signed short)(gyro_data[2]<<8 | gyro_data[3])/131.0;
+		float gyroZ = 1.0 + (signed short)(gyro_data[4]<<8 | gyro_data[5])/131.0; // ~-1deg/s error
+
+
+		// convert accelerometer data to pitch and roll
+		int accPitch = atan2(accY, accZ) * (180/PI); // deg
+		int accRoll = (-1) * atan2(accX, accZ) * (180/PI);
+
+
+
+		// convert gyro data to yaw/pitch/roll
+		// keep track of time and get dt
+		Timer_GetTimeMS(&time);
+		dt = (time - previousTime)/1000;
+		previousTime = time;
+
+		// calculate change in gyro angle
+		float gyroPitchChange = dt*gyroX;  // deg
+		float gyroRollChange = dt*gyroY;
+
+		// convert to gyro pitch/roll
+		int gyroPitch = gyroPitch + gyroPitchChange;
+		int gyroRoll = gyroRoll + gyroRollChange;
+
+
+		// TODO: combine the acc & gyro data
+
+		// TODO: Get magnetometer data and convert to yaw (PCB)
+
+		// convert accelerometer data to string TODO: put in function
+
+		char accXstr[10];
+		char accYstr[10];
+		char accZstr[10];
+		sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+		sprintf(accYstr, "%.2f", accY);
+		sprintf(accZstr, "%.2f", accZ);
+
+		// convert gyroscope data to string
+		char gyroXstr[5];
+		char gyroYstr[5];
+		char gyroZstr[5];
+		sprintf(gyroXstr, "%d", gyroX);
+		sprintf(gyroYstr, "%d", gyroY);
+		sprintf(gyroZstr, "%d", gyroZ);
+
+		// convert other data to string
+		char pitchStr[5];
+		char rollStr[5];
+		sprintf(pitchStr, "%d", accPitch);
+		sprintf(rollStr, "%d", accRoll);
+
+		// send data TODO: convert creating & sending string into a separate function
+		send_string("\r\n");
+		send_string(pitchStr);
+		send_string("/");
+		send_string(rollStr);
+		send_string("/");
+		send_string(accZstr);
+
+
+		Term_SendStr("\r\n");
+		Term_SendNum(gyroPitch);
+		Term_SendStr("/");
+		Term_SendNum(gyroRoll);
+		Term_SendStr("/"); // need one on the end for Matlab script
+
+
+
+
+
+		// wait for .05 second
+		Timer_GetTimeMS(&time);
+		int currentTime = time;
+		do {
+			Timer_GetTimeMS(&time);
+		} while ((time - currentTime) < 50);
+
+
+	}
+
+
+
+	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+} /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+
+/* END main */
+/*!
+ ** @}
+ */
+/*
+ ** ###################################################################
+ **
+ **     This file was created by Processor Expert 10.5 [05.21]
+ **     for the Freescale Kinetis series of microcontrollers.
+ **
+ ** ###################################################################
+ */

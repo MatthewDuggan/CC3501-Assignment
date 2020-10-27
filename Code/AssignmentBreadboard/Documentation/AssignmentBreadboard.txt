@@ -93,6 +93,11 @@ Module "TU1"       (component TimerUnit_LDD)
                 counter is updated to the reload value.   The method is not available if HW doesn't allow resetting of the 
                 counter.
 
+Module "CS1"       (component CriticalSection)
+   - CS1_CriticalVariable -Defines a variable if necessary. This is a macro.
+   - CS1_EnterCritical -Enters a critical section
+   - CS1_ExitCritical -Exits a critical section
+
 Module "Cpu"       (component MK20DX128EX5)
 
 ===================================================================================

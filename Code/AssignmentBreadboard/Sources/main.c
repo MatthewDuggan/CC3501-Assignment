@@ -40,6 +40,7 @@
 #include "Timer.h"
 #include "RealTimeLdd1.h"
 #include "TU1.h"
+#include "CS1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -58,8 +59,10 @@ int main(void)
 	/* Write your local variable definition here */
 	int time;
 
-	int dt; // change in time
+	float dt; // change in time
 	int previousTime = time;
+	int gyroPitch = 0;
+	int gyroRoll = 0; // assume starting flat
 
 	float PI = 3.14159265359;
 
@@ -112,29 +115,39 @@ int main(void)
 			// read successfully
 		}
 
-		// convert data to signed number TODO: use all bits
+		// convert data to signed number TODO: use all bits for accelerometer
 		float accX = (signed char)acc_data[0] * 1.0;
 		float accY = (signed char)acc_data[2] * 1.0;
 		float accZ = (signed char)acc_data[4] * 1.0;
-		float gyroX = (signed char)gyro_data[0] * 1.0; // TODO: convert from raw to deg/s
-		float gyroY = (signed char)gyro_data[2] * 1.0;
-		float gyroZ = (signed char)gyro_data[4] * 1.0;
+		// 131 converts to deg/s as per section 4.2 of MPU6050 datasheet
+		float gyroX = 1.0 + (signed short)(gyro_data[0]<<8 | gyro_data[1])/131.0; // ~-1deg/s error
+		float gyroY = (signed short)(gyro_data[2]<<8 | gyro_data[3])/131.0;
+		float gyroZ = 1.0 + (signed short)(gyro_data[4]<<8 | gyro_data[5])/131.0; // ~-1deg/s error
 
-		// convert accelerometer data to pitch and roll TODO: get working correctly
+
+		// convert accelerometer data to pitch and roll TODO: add a low pass filter
 		int accPitch = atan2(accY, accZ) * (180/PI); // deg
 		int accRoll = (-1) * atan2(accX, accZ) * (180/PI);
 
-		// convert gyro data to yaw/pitch/roll
-		// TODO: keep track of time and get dt
+		// convert gyro data to pitch and roll
+		// keep track of time and get dt
 		Timer_GetTimeMS(&time);
-		dt = time - previousTime;
+		dt = (time - previousTime)/1000.0;
 		previousTime = time;
 
-		// TODO: convert gyro from angular velocity to angle
-		// TODO: convert to yaw/pitch/roll
+		// calculate change in gyro angle
+		float gyroPitchChange = dt*gyroX;  // deg
+		float gyroRollChange = dt*gyroY;
+
+		// convert to gyro pitch and roll
+		int gyroPitch = gyroPitch + gyroPitchChange;
+		int gyroRoll = gyroRoll + gyroRollChange;
+
+		// use mostly gyro pitch and roll but add some accelerometer to compensate for gyro drift
+		int pitch = 0.7*gyroPitch + 0.3*accPitch;
+		int roll = 0.7*gyroRoll + 0.3*accRoll;
 
 
-		// TODO: convert gyro data to yaw/pitch/roll
 		// TODO: combine the acc & gyro data
 
 		// TODO: Get magnetometer data and convert to yaw (PCB)
@@ -144,7 +157,7 @@ int main(void)
 		char accXstr[10];
 		char accYstr[10];
 		char accZstr[10];
-		sprintf(accXstr, "%.2f", accX); // TODO
+		sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
 		sprintf(accYstr, "%.2f", accY);
 		sprintf(accZstr, "%.2f", accZ);
 
@@ -159,8 +172,8 @@ int main(void)
 		// convert other data to string
 		char pitchStr[5];
 		char rollStr[5];
-		sprintf(pitchStr, "%d", accPitch);
-		sprintf(rollStr, "%d", accRoll);
+		sprintf(pitchStr, "%d", pitch);
+		sprintf(rollStr, "%d", roll);
 
 		// send data TODO: convert creating & sending string into a separate function
 		send_string("\r\n");
@@ -170,12 +183,11 @@ int main(void)
 		send_string("/");
 		send_string(accZstr);
 
-
 		Term_SendStr("\r\n");
-		Term_SendNum(accPitch);
+		Term_SendNum(pitch);
 		Term_SendStr("/");
-		Term_SendNum(accRoll);
-		Term_SendStr("/");
+		Term_SendNum(roll);
+		Term_SendStr("/"); // need one on the end for Matlab script
 
 
 
@@ -186,7 +198,7 @@ int main(void)
 		int currentTime = time;
 		do {
 			Timer_GetTimeMS(&time);
-		} while ((time - currentTime) < 50);
+		} while ((time - currentTime) < 100);
 
 
 	}
@@ -194,14 +206,14 @@ int main(void)
 
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-#ifdef PEX_RTOS_START
-	PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-#endif
-	/*** End of RTOS startup code.  ***/
-	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-	for(;;){}
-	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */
