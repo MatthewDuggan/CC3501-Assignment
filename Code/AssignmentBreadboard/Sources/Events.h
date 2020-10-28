@@ -43,7 +43,9 @@
 #include "Timer.h"
 #include "RealTimeLdd1.h"
 #include "TU1.h"
-#include "CS1.h"
+#include "DelayTimer.h"
+#include "RealTimeLdd2.h"
+#include "TU2.h"
 
 #ifdef __cplusplus
 extern "C" {

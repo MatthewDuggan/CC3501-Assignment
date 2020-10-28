@@ -511,3 +511,356 @@ Invoking: Cross ARM C++ Linker
 arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
 Finished building target: AssignmentBreadboard.elf
  
+09:18:24 **** Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/Events.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/Events.d" -MT"Sources/Events.o" -c -o "Sources/Events.o" "../Sources/Events.c"
+Finished building: ../Sources/Events.c
+ 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:160:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:160:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building file: ../Project_Settings/Startup_Code/startup.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Project_Settings/Startup_Code/startup.d" -MT"Project_Settings/Startup_Code/startup.o" -c -o "Project_Settings/Startup_Code/startup.o" "../Project_Settings/Startup_Code/startup.c"
+Finished building: ../Project_Settings/Startup_Code/startup.c
+ 
+Building file: ../Generated_Code/ASerialLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd1.d" -MT"Generated_Code/ASerialLdd1.o" -c -o "Generated_Code/ASerialLdd1.o" "../Generated_Code/ASerialLdd1.c"
+Finished building: ../Generated_Code/ASerialLdd1.c
+ 
+Building file: ../Generated_Code/ASerialLdd2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd2.d" -MT"Generated_Code/ASerialLdd2.o" -c -o "Generated_Code/ASerialLdd2.o" "../Generated_Code/ASerialLdd2.c"
+Finished building: ../Generated_Code/ASerialLdd2.c
+ 
+Building file: ../Generated_Code/BTUART.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/BTUART.d" -MT"Generated_Code/BTUART.o" -c -o "Generated_Code/BTUART.o" "../Generated_Code/BTUART.c"
+Finished building: ../Generated_Code/BTUART.c
+ 
+Building file: ../Generated_Code/CS1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/CS1.d" -MT"Generated_Code/CS1.o" -c -o "Generated_Code/CS1.o" "../Generated_Code/CS1.c"
+Finished building: ../Generated_Code/CS1.c
+ 
+Building file: ../Generated_Code/Cpu.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Cpu.d" -MT"Generated_Code/Cpu.o" -c -o "Generated_Code/Cpu.o" "../Generated_Code/Cpu.c"
+Finished building: ../Generated_Code/Cpu.c
+ 
+Building file: ../Generated_Code/I2C.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/I2C.d" -MT"Generated_Code/I2C.o" -c -o "Generated_Code/I2C.o" "../Generated_Code/I2C.c"
+Finished building: ../Generated_Code/I2C.c
+ 
+Building file: ../Generated_Code/Inhr1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Inhr1.d" -MT"Generated_Code/Inhr1.o" -c -o "Generated_Code/Inhr1.o" "../Generated_Code/Inhr1.c"
+Finished building: ../Generated_Code/Inhr1.c
+ 
+Building file: ../Generated_Code/IntI2cLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/IntI2cLdd1.d" -MT"Generated_Code/IntI2cLdd1.o" -c -o "Generated_Code/IntI2cLdd1.o" "../Generated_Code/IntI2cLdd1.c"
+Finished building: ../Generated_Code/IntI2cLdd1.c
+ 
+Building file: ../Generated_Code/PE_LDD.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PE_LDD.d" -MT"Generated_Code/PE_LDD.o" -c -o "Generated_Code/PE_LDD.o" "../Generated_Code/PE_LDD.c"
+Finished building: ../Generated_Code/PE_LDD.c
+ 
+Building file: ../Generated_Code/RealTimeLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/RealTimeLdd1.d" -MT"Generated_Code/RealTimeLdd1.o" -c -o "Generated_Code/RealTimeLdd1.o" "../Generated_Code/RealTimeLdd1.c"
+Finished building: ../Generated_Code/RealTimeLdd1.c
+ 
+Building file: ../Generated_Code/TU1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TU1.d" -MT"Generated_Code/TU1.o" -c -o "Generated_Code/TU1.o" "../Generated_Code/TU1.c"
+Finished building: ../Generated_Code/TU1.c
+ 
+Building file: ../Generated_Code/Term.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Term.d" -MT"Generated_Code/Term.o" -c -o "Generated_Code/Term.o" "../Generated_Code/Term.c"
+Finished building: ../Generated_Code/Term.c
+ 
+Building file: ../Generated_Code/Timer.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Timer.d" -MT"Generated_Code/Timer.o" -c -o "Generated_Code/Timer.o" "../Generated_Code/Timer.c"
+Finished building: ../Generated_Code/Timer.c
+ 
+Building file: ../Generated_Code/Vectors.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Vectors.d" -MT"Generated_Code/Vectors.o" -c -o "Generated_Code/Vectors.o" "../Generated_Code/Vectors.c"
+Finished building: ../Generated_Code/Vectors.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:24:35 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:160:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:160:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:26:41 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:160:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:160:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:31:11 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:160:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:160:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:32:57 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:160:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:160:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:45:00 **** Clean-only build of configuration Debug for project AssignmentBreadboard ****
+make clean 
+rm -rf  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/TU1.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o  ./Sources/Events.d ./Sources/main.d  ./Project_Settings/Startup_Code/startup.d  ./Generated_Code/ASerialLdd1.d ./Generated_Code/ASerialLdd2.d ./Generated_Code/BTUART.d ./Generated_Code/CS1.d ./Generated_Code/Cpu.d ./Generated_Code/I2C.d ./Generated_Code/Inhr1.d ./Generated_Code/IntI2cLdd1.d ./Generated_Code/PE_LDD.d ./Generated_Code/RealTimeLdd1.d ./Generated_Code/TU1.d ./Generated_Code/Term.d ./Generated_Code/Timer.d ./Generated_Code/Vectors.d  AssignmentBreadboard.elf
+rm: can't remove 'AssignmentBreadboard.elf': Permission denied
+makefile:61: recipe for target 'clean' failed
+make: [clean] Error 1 (ignored)
+ 
+09:45:00 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/Events.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/Events.d" -MT"Sources/Events.o" -c -o "Sources/Events.o" "../Sources/Events.c"
+Finished building: ../Sources/Events.c
+ 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:162:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:162:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building file: ../Project_Settings/Startup_Code/startup.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Project_Settings/Startup_Code/startup.d" -MT"Project_Settings/Startup_Code/startup.o" -c -o "Project_Settings/Startup_Code/startup.o" "../Project_Settings/Startup_Code/startup.c"
+Finished building: ../Project_Settings/Startup_Code/startup.c
+ 
+Building file: ../Generated_Code/ASerialLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd1.d" -MT"Generated_Code/ASerialLdd1.o" -c -o "Generated_Code/ASerialLdd1.o" "../Generated_Code/ASerialLdd1.c"
+Finished building: ../Generated_Code/ASerialLdd1.c
+ 
+Building file: ../Generated_Code/ASerialLdd2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd2.d" -MT"Generated_Code/ASerialLdd2.o" -c -o "Generated_Code/ASerialLdd2.o" "../Generated_Code/ASerialLdd2.c"
+Finished building: ../Generated_Code/ASerialLdd2.c
+ 
+Building file: ../Generated_Code/BTUART.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/BTUART.d" -MT"Generated_Code/BTUART.o" -c -o "Generated_Code/BTUART.o" "../Generated_Code/BTUART.c"
+Finished building: ../Generated_Code/BTUART.c
+ 
+Building file: ../Generated_Code/Cpu.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Cpu.d" -MT"Generated_Code/Cpu.o" -c -o "Generated_Code/Cpu.o" "../Generated_Code/Cpu.c"
+Finished building: ../Generated_Code/Cpu.c
+ 
+Building file: ../Generated_Code/DelayTimer.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/DelayTimer.d" -MT"Generated_Code/DelayTimer.o" -c -o "Generated_Code/DelayTimer.o" "../Generated_Code/DelayTimer.c"
+Finished building: ../Generated_Code/DelayTimer.c
+ 
+Building file: ../Generated_Code/I2C.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/I2C.d" -MT"Generated_Code/I2C.o" -c -o "Generated_Code/I2C.o" "../Generated_Code/I2C.c"
+Finished building: ../Generated_Code/I2C.c
+ 
+Building file: ../Generated_Code/Inhr1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Inhr1.d" -MT"Generated_Code/Inhr1.o" -c -o "Generated_Code/Inhr1.o" "../Generated_Code/Inhr1.c"
+Finished building: ../Generated_Code/Inhr1.c
+ 
+Building file: ../Generated_Code/IntI2cLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/IntI2cLdd1.d" -MT"Generated_Code/IntI2cLdd1.o" -c -o "Generated_Code/IntI2cLdd1.o" "../Generated_Code/IntI2cLdd1.c"
+Finished building: ../Generated_Code/IntI2cLdd1.c
+ 
+Building file: ../Generated_Code/PE_LDD.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PE_LDD.d" -MT"Generated_Code/PE_LDD.o" -c -o "Generated_Code/PE_LDD.o" "../Generated_Code/PE_LDD.c"
+Finished building: ../Generated_Code/PE_LDD.c
+ 
+Building file: ../Generated_Code/RealTimeLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/RealTimeLdd1.d" -MT"Generated_Code/RealTimeLdd1.o" -c -o "Generated_Code/RealTimeLdd1.o" "../Generated_Code/RealTimeLdd1.c"
+Finished building: ../Generated_Code/RealTimeLdd1.c
+ 
+Building file: ../Generated_Code/RealTimeLdd2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/RealTimeLdd2.d" -MT"Generated_Code/RealTimeLdd2.o" -c -o "Generated_Code/RealTimeLdd2.o" "../Generated_Code/RealTimeLdd2.c"
+Finished building: ../Generated_Code/RealTimeLdd2.c
+ 
+Building file: ../Generated_Code/TU1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TU1.d" -MT"Generated_Code/TU1.o" -c -o "Generated_Code/TU1.o" "../Generated_Code/TU1.c"
+Finished building: ../Generated_Code/TU1.c
+ 
+Building file: ../Generated_Code/TU2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TU2.d" -MT"Generated_Code/TU2.o" -c -o "Generated_Code/TU2.o" "../Generated_Code/TU2.c"
+Finished building: ../Generated_Code/TU2.c
+ 
+Building file: ../Generated_Code/Term.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Term.d" -MT"Generated_Code/Term.o" -c -o "Generated_Code/Term.o" "../Generated_Code/Term.c"
+Finished building: ../Generated_Code/Term.c
+ 
+Building file: ../Generated_Code/Timer.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Timer.d" -MT"Generated_Code/Timer.o" -c -o "Generated_Code/Timer.o" "../Generated_Code/Timer.c"
+Finished building: ../Generated_Code/Timer.c
+ 
+Building file: ../Generated_Code/Vectors.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Vectors.d" -MT"Generated_Code/Vectors.o" -c -o "Generated_Code/Vectors.o" "../Generated_Code/Vectors.c"
+Finished building: ../Generated_Code/Vectors.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:45:21 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+make: Nothing to be done for 'all'.
+09:49:01 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:162:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:162:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:50:52 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:162:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:162:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+09:54:23 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:162:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:162:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+10:01:15 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:164:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+   ^
+../Sources/main.c:164:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/jc259190/Documents/GitHub/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+10:09:08 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+make: Nothing to be done for 'all'.

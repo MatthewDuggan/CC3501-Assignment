@@ -5,7 +5,7 @@ clc;
 delete(instrfindall);
 
 % create serial object
-s = serial("COM3", "BaudRate", 115200);
+s = serial("COM17", "BaudRate", 115200);
 
 % open serial port
 fopen(s);
@@ -25,6 +25,7 @@ while(1)
    plot(roll)
    hold off
    ylim([-100 100]);
+   % change xlim to make it slide along after a certain point
    % adding a legend makes it lag badly
    
    

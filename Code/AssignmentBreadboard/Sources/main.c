@@ -40,7 +40,9 @@
 #include "Timer.h"
 #include "RealTimeLdd1.h"
 #include "TU1.h"
-#include "CS1.h"
+#include "DelayTimer.h"
+#include "RealTimeLdd2.h"
+#include "TU2.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -58,7 +60,7 @@ int main(void)
 {
 	/* Write your local variable definition here */
 	int time;
-
+	int delayTime; // TODO better name
 	float dt; // change in time
 	int previousTime = time;
 	int gyroPitch = 0;
@@ -133,6 +135,8 @@ int main(void)
 		// keep track of time and get dt
 		Timer_GetTimeMS(&time);
 		dt = (time - previousTime)/1000.0;
+		Timer_Reset();
+		Timer_GetTimeMS(&time);
 		previousTime = time;
 
 		// calculate change in gyro angle
@@ -143,7 +147,7 @@ int main(void)
 		int gyroPitch = gyroPitch + gyroPitchChange;
 		int gyroRoll = gyroRoll + gyroRollChange;
 
-		// use mostly gyro pitch and roll but add some accelerometer to compensate for gyro drift
+		// use mostly gyro pitch and roll but add some accelerometer to compensate for gyro drift TODO: if accPitch/accRoll = 0 exactly then it does not eliminate SS error
 		int pitch = 0.7*gyroPitch + 0.3*accPitch;
 		int roll = 0.7*gyroRoll + 0.3*accRoll;
 
@@ -181,7 +185,7 @@ int main(void)
 		send_string("/");
 		send_string(rollStr);
 		send_string("/");
-		send_string(accZstr);
+		send_string(rollStr);
 
 		Term_SendStr("\r\n");
 		Term_SendNum(pitch);
@@ -190,10 +194,7 @@ int main(void)
 		Term_SendStr("/"); // need one on the end for Matlab script
 
 
-
-
-
-		// wait for .05 second
+		// TODO: change to use the DelayTimer so runs for more than 65 seconds
 		Timer_GetTimeMS(&time);
 		int currentTime = time;
 		do {
@@ -206,14 +207,14 @@ int main(void)
 
 
 	/*** Don't write any code pass this line, or it will be deleted during code generation. ***/
-  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
-  #ifdef PEX_RTOS_START
-    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
-  #endif
-  /*** End of RTOS startup code.  ***/
-  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){}
-  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+	/*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+#ifdef PEX_RTOS_START
+	PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+#endif
+	/*** End of RTOS startup code.  ***/
+	/*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+	for(;;){}
+	/*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
 /* END main */
