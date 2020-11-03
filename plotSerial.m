@@ -14,21 +14,28 @@ i = 1;
 
 figure
 ylim([-100 100]);
+
+
 while(1)
    line = fscanf(s);
    data = strsplit(strip(line),"/");
-   pitch(i) = str2double(data(1));
-   roll(i) = str2double(data(2));
-   yaw(i) = str2double(data(3));
-      
-   plot(pitch);
-   hold on
-   plot(roll)
-   hold off
-   ylim([-100 100]);
-   % change xlim to make it slide along after a certain point
-   % adding a legend makes it lag badly
-   
+   disp(data);
+   disp(length(data));
+   if i > 3 % array too small if starting from first index
+       pitch(i) = str2double(data(1));
+       roll(i) = str2double(data(2));
+       yaw(i) = str2double(data(3));
+
+       plot(pitch);
+       hold on
+       plot(roll);
+       hold on
+       plot(yaw);
+       hold off
+       ylim([-100 100]);
+       % change xlim to make it slide along after a certain point
+       % adding a legend makes it lag badly
+   end 
    
    i = i + 1;
    

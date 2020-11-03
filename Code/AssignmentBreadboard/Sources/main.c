@@ -87,8 +87,6 @@ int main(void)
 
 	}
 
-	Timer_Reset();
-
 
 	// TURN ON IMU by passing 0 to reg 0x6B
 	// TODO: ERROR CHECKING - "check wiring" if data is incorrect?
@@ -193,7 +191,7 @@ int main(void)
 		Term_SendNum(roll);
 		Term_SendStr("/");
 		Term_SendNum(yaw);
-		Term_SendStr("/"); // need trailing delimiter for Matlab live plotting script
+		Term_SendStr(" /"); // need trailing delimiter for Matlab live plotting script
 
 		Timer_GetTimeMS(&time);
 		int currentTime = time;

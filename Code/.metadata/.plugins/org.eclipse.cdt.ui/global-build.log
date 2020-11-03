@@ -1687,3 +1687,152 @@ Finished building target: AssignmentBreadboard.elf
 22:57:46 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
 make all 
 make: Nothing to be done for 'all'.
+23:00:05 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:163:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:178:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:178:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+23:01:47 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+make: Nothing to be done for 'all'.
+23:02:30 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+make: Nothing to be done for 'all'.
+23:05:17 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:163:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:178:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:178:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+23:06:45 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:161:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:176:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:176:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+23:07:23 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:161:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:176:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:176:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+23:08:19 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:161:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:176:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:176:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+23:09:58 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:161:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:176:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:176:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
+23:11:50 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+make: Nothing to be done for 'all'.
+23:13:38 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:161:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:176:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(pitchStr, "%d", (int)pitch);
+   ^
+../Sources/main.c:176:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+Finished building: ../Sources/main.c
+ 
+Building target: AssignmentBreadboard.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Project_Settings/Linker_Files" -Wl,-Map,"AssignmentBreadboard.map" -specs=nano.specs -specs=nosys.specs -o "AssignmentBreadboard.elf"  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/ASerialLdd1.o ./Generated_Code/ASerialLdd2.o ./Generated_Code/BTUART.o ./Generated_Code/CS1.o ./Generated_Code/Cpu.o ./Generated_Code/DelayTimer.o ./Generated_Code/I2C.o ./Generated_Code/Inhr1.o ./Generated_Code/IntI2cLdd1.o ./Generated_Code/PE_LDD.o ./Generated_Code/RealTimeLdd1.o ./Generated_Code/RealTimeLdd2.o ./Generated_Code/TU1.o ./Generated_Code/TU2.o ./Generated_Code/Term.o ./Generated_Code/Timer.o ./Generated_Code/Vectors.o   
+Finished building target: AssignmentBreadboard.elf
+ 
