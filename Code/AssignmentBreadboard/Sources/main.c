@@ -40,6 +40,7 @@
 #include "Timer.h"
 #include "RealTimeLdd1.h"
 #include "TU1.h"
+#include "CS1.h"
 #include "DelayTimer.h"
 #include "RealTimeLdd2.h"
 #include "TU2.h"
@@ -62,10 +63,11 @@ int main(void)
 	int time;
 	int delayTime; // TODO better name
 	float dt; // change in time
+
 	int previousTime = time;
 	int gyroPitch = 0;
-	int gyroRoll = 0; // assume starting flat
-
+	int gyroRoll = 0;
+	int gyroYaw = 0; // assume starting flat
 	float PI = 3.14159265359;
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
@@ -85,15 +87,16 @@ int main(void)
 
 	}
 
-	Timer_Reset(); // TODO: Timer returns 16 bit uint, so can only run for 65 seconds using this method
+	Timer_Reset();
 
 
 	// TURN ON IMU by passing 0 to reg 0x6B
+	// TODO: ERROR CHECKING - "check wiring" if data is incorrect?
 	char msg[2] = {0x6B, 0};
 	word sent;
 
 	for(;;){
-		// READ RAW DATA FROM ACCELEROMETER TODO: when changing to PCB - register addresses will change, slave addresses will change (one for gyro, one for acc/mag)
+		// READ RAW DATA FROM ACCELEROMETER
 		unsigned char acc_data[6];
 		if (ERR_OK != I2C_SendChar(0x3B)){
 			// did not transmit address}
@@ -118,18 +121,19 @@ int main(void)
 		}
 
 		// convert data to signed number TODO: use all bits for accelerometer
-		float accX = (signed char)acc_data[0] * 1.0;
-		float accY = (signed char)acc_data[2] * 1.0;
-		float accZ = (signed char)acc_data[4] * 1.0;
+		float accX = (signed short)(acc_data[0]<<8 | acc_data[1]) * 1.0;
+		float accY = (signed short)(acc_data[2]<<8| acc_data[3]) * 1.0;
+		float accZ = (signed short)(acc_data[4]<<8| acc_data[5]) * 1.0;
+
 		// 131 converts to deg/s as per section 4.2 of MPU6050 datasheet
-		float gyroX = 1.0 + (signed short)(gyro_data[0]<<8 | gyro_data[1])/131.0; // ~-1deg/s error
+		float gyroX = 1.0 + (signed short)(gyro_data[0]<<8 | gyro_data[1])/131.0; // ~-1deg/s error on breakout board
 		float gyroY = (signed short)(gyro_data[2]<<8 | gyro_data[3])/131.0;
-		float gyroZ = 1.0 + (signed short)(gyro_data[4]<<8 | gyro_data[5])/131.0; // ~-1deg/s error
+		float gyroZ = 1.0 + (signed short)(gyro_data[4]<<8 | gyro_data[5])/131.0; // ~-1deg/s error on breakout board
 
 
 		// convert accelerometer data to pitch and roll TODO: add a low pass filter
-		int accPitch = atan2(accY, accZ) * (180/PI); // deg
-		int accRoll = (-1) * atan2(accX, accZ) * (180/PI);
+		float accPitch = atan2(accY, accZ) * (180/PI) - 1.5 ; // error of +1.5deg when flat
+		float accRoll = (-1) * atan2(accX, accZ) * (180/PI) - 3; //error of +3deg when flat
 
 		// convert gyro data to pitch and roll
 		// keep track of time and get dt
@@ -140,19 +144,26 @@ int main(void)
 		previousTime = time;
 
 		// calculate change in gyro angle
-		float gyroPitchChange = dt*gyroX;  // deg
-		float gyroRollChange = dt*gyroY;
+		int gyroPitchChange = dt*gyroX;  // deg
+		int gyroRollChange = dt*gyroY;
+		int gyroYawChange = dt*gyroZ;
 
 		// convert to gyro pitch and roll
-		int gyroPitch = gyroPitch + gyroPitchChange;
-		int gyroRoll = gyroRoll + gyroRollChange;
+		gyroPitch = gyroPitch + gyroPitchChange;
+		gyroRoll = gyroRoll + gyroRollChange;
+		gyroYaw = gyroYaw - gyroYawChange;
 
 		// use mostly gyro pitch and roll but add some accelerometer to compensate for gyro drift TODO: if accPitch/accRoll = 0 exactly then it does not eliminate SS error
-		int pitch = 0.7*gyroPitch + 0.3*accPitch;
-		int roll = 0.7*gyroRoll + 0.3*accRoll;
+		int pitch = 0.9*gyroPitch + 0.1*accPitch;
+		int roll = 0.9*gyroRoll + 0.1*accRoll;
+		int yaw = gyroYaw;
 
-
-		// TODO: combine the acc & gyro data
+		//		if (abs(accPitch) < 1){
+		//			pitch = accPitch; // eliminate gyro drift when accelerometer pitch is very small TODO: doesn't work properly; try w/ LPF
+		//		}
+		//		if (abs(accRoll) < 1){
+		//			roll = accRoll; // eliminate gyro drift when accelerometer roll is very small
+		//		}
 
 		// TODO: Get magnetometer data and convert to yaw (PCB)
 
@@ -176,8 +187,10 @@ int main(void)
 		// convert other data to string
 		char pitchStr[5];
 		char rollStr[5];
+		char yawStr[5];
 		sprintf(pitchStr, "%d", pitch);
 		sprintf(rollStr, "%d", roll);
+		sprintf(yawStr, "%d", yaw);
 
 		// send data TODO: convert creating & sending string into a separate function
 		send_string("\r\n");
@@ -188,13 +201,13 @@ int main(void)
 		send_string(rollStr);
 
 		Term_SendStr("\r\n");
-		Term_SendNum(pitch);
+		Term_SendNum(accPitch);
 		Term_SendStr("/");
-		Term_SendNum(roll);
-		Term_SendStr("/"); // need one on the end for Matlab script
+		Term_SendNum(accRoll);
+		Term_SendStr("/");
+		Term_SendNum(yaw);
+		Term_SendStr("/"); // need trailing delimiter for Matlab live plotting script
 
-
-		// TODO: change to use the DelayTimer so runs for more than 65 seconds
 		Timer_GetTimeMS(&time);
 		int currentTime = time;
 		do {

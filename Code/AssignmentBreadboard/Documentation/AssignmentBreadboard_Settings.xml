@@ -957,7 +957,20 @@ PE_DEBUGHALT();
     </Events>
   </Bean>
   <Bean name="CS1" type="CriticalSection">
-    <Enabled v="N" />
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="CS1" />
+      <Use_Processor_Expert_Default v="no" />
+      <Use_FreeRTOS v="no" />
+    </Properties>
+    <Methods>
+      <CriticalVariable v="generate code" />
+      <EnterCritical v="generate code" />
+      <ExitCritical v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
   </Bean>
   <Bean name="DelayTimer" type="FreeCntr32">
     <Enabled v="Y" />

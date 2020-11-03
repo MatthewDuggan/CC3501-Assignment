@@ -6,7 +6,7 @@
 **     Version     : Component 01.009, Driver 01.04, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-10-28, 09:44, # CodeGen: 16
+**     Date/Time   : 2020-11-03, 18:45, # CodeGen: 17
 **     Abstract    :
 **
 **     Settings    :
@@ -65,6 +65,7 @@
   #include "Timer.h"
   #include "RealTimeLdd1.h"
   #include "TU1.h"
+  #include "CS1.h"
   #include "DelayTimer.h"
   #include "RealTimeLdd2.h"
   #include "TU2.h"

@@ -5,7 +5,7 @@ clc;
 delete(instrfindall);
 
 % create serial object
-s = serial("COM17", "BaudRate", 115200);
+s = serial("COM3", "BaudRate", 115200);
 
 % open serial port
 fopen(s);
@@ -19,6 +19,7 @@ while(1)
    data = strsplit(strip(line),"/");
    pitch(i) = str2double(data(1));
    roll(i) = str2double(data(2));
+   yaw(i) = str2double(data(3));
       
    plot(pitch);
    hold on
