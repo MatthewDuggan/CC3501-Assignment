@@ -153,21 +153,36 @@ int main(void)
 		gyroRoll = gyroRoll + gyroRollChange;
 		gyroYaw = gyroYaw - gyroYawChange;
 
-		// use mostly gyro pitch and roll but add some accelerometer to compensate for gyro drift
+		// use mostly gyro pitch and roll but add some accelerometer to compensate for gyro drift TODO: if accPitch/accRoll = 0 exactly then it does not eliminate SS error
 		float pitch = 0.7*gyroPitch + 0.3*accPitch;
 		float roll = 0.7*gyroRoll + 0.3*accRoll;
 		float yaw = gyroYaw;
 
-		if (abs(accPitch) < 5){
-			pitch = accPitch;
-			gyroPitch = accPitch; // eliminate gyro drift when accelerometer pitch is very small TODO: doesn't work properly; try w/ LPF
-		}
-		if (abs(accRoll) < 5){
-			roll = accRoll;
-			gyroRoll = accRoll; // eliminate gyro drift when accelerometer roll is very small
-		}
+//		if (abs(accPitch) < 5){
+//			pitch = accPitch; // eliminate gyro drift when accelerometer pitch is very small TODO: doesn't work properly; try w/ LPF
+//		}
+//		if (abs(accRoll) < 5){
+//			roll = 0.95*accRoll + ; // eliminate gyro drift when accelerometer roll is very small
+//		}
 
 		// TODO: Get magnetometer data and convert to yaw (PCB)
+
+		// convert accelerometer data to string TODO: put in function
+
+		char accXstr[10];
+		char accYstr[10];
+		char accZstr[10];
+		sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
+		sprintf(accYstr, "%.2f", accY);
+		sprintf(accZstr, "%.2f", accZ);
+
+		// convert gyroscope data to string
+		char gyroXstr[5];
+		char gyroYstr[5];
+		char gyroZstr[5];
+		sprintf(gyroXstr, "%d", gyroX);
+		sprintf(gyroYstr, "%d", gyroY);
+		sprintf(gyroZstr, "%d", gyroZ);
 
 		// convert other data to string
 		char pitchStr[5];

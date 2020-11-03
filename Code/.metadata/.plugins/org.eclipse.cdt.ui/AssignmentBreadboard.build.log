@@ -1,13 +1,16 @@
-21:33:11 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
+21:46:36 **** Incremental Build of configuration Debug for project AssignmentBreadboard ****
 make all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/PDD" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Static_Code/IO_Map" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Sources" -I"C:/Users/matth/OneDrive/Engineering/2020 Semester 2/CC3501/CC3501-Assignment/Code/AssignmentBreadboard/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
 ../Sources/main.c: In function 'main':
-../Sources/main.c:175:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+../Sources/main.c:161:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+   if (abs(accPitch) < 5){
+   ^
+../Sources/main.c:177:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
    sprintf(accXstr, "%.2f", accX); // TODO get working if I even need it
    ^
-../Sources/main.c:175:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+../Sources/main.c:177:3: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
 Finished building: ../Sources/main.c
  
 Building target: AssignmentBreadboard.elf
@@ -16,5 +19,5 @@ arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -O0 -fmessage-length=0 -fsigned-char -
 Finished building target: AssignmentBreadboard.elf
  
 
-21:33:12 Build Finished (took 1s.93ms)
+21:46:37 Build Finished (took 1s.158ms)
 
