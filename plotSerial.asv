@@ -21,19 +21,26 @@ while(1)
    data = strsplit(strip(line),"/");
    disp(data);
    disp(length(data));
-   if i > 3
-   pitch(i) = str2double(data(1));
-   roll(i) = str2double(data(2));
-   yaw(i) = str2double(data(3));
-      
-   plot(pitch);
-   hold on
-   plot(roll)
-   hold off
-   ylim([-100 100]);
-   % change xlim to make it slide along after a certain point
-   % adding a legend makes it lag badly
-   
+   if i > 3 % string array too small if starting from first index
+       pitch(i) = str2double(data(1));
+       roll(i) = str2double(data(2));
+       yaw(i) = str2double(data(3));
+
+       plot(pitch);
+       hold on
+       plot(roll);
+       hold on
+       plot(yaw);
+       hold off
+       if i <= 150
+            xlim([3 i]);
+       else
+            xlim([i-100 i]);
+       end
+       ylim([-100 100]);
+       % change xlim to make it slide along after a certain point
+       % adding a legend makes it lag badly
+   end 
    
    i = i + 1;
    

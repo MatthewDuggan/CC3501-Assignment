@@ -21,7 +21,7 @@ while(1)
    data = strsplit(strip(line),"/");
    disp(data);
    disp(length(data));
-   if i > 3 % array too small if starting from first index
+   if i > 3 % string array too small if starting from first index
        pitch(i) = str2double(data(1));
        roll(i) = str2double(data(2));
        yaw(i) = str2double(data(3));
@@ -32,6 +32,11 @@ while(1)
        hold on
        plot(yaw);
        hold off
+       if i <= 150
+            xlim([3 i]);
+       else
+            xlim([i-100 i]); % runs across the x axis after ~100 reads
+       end
        ylim([-100 100]);
        % change xlim to make it slide along after a certain point
        % adding a legend makes it lag badly
