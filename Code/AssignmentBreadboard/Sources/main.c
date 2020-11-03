@@ -66,8 +66,8 @@ int main(void)
 
 	int previousTime = time;
 	float gyroPitch = 0;
-	float gyroRoll = 0;
-	float gyroYaw = 0; // assume starting flat
+	float gyroRoll = 0; // assume starting flat
+	float gyroYaw = 0; // assume starting position of nose is 0
 	float PI = 3.14159265359;
 
 	/*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
@@ -92,14 +92,16 @@ int main(void)
 
 	// TURN ON IMU by passing 0 to reg 0x6B
 	// TODO: ERROR CHECKING - "check wiring" if data is incorrect?
-	char msg[2] = {0x6B, 0};
+	char msg[2] = {0x6B, 0}; // use MPU-6050's internal oscillator
 	word sent;
 
 	for(;;){
 		// READ RAW DATA FROM ACCELEROMETER
 		unsigned char acc_data[6];
 		if (ERR_OK != I2C_SendChar(0x3B)){
-			// did not transmit address}
+			send_string("\r\nThere was a connection problem. Check wiring/PCB ");
+			Term_SendStr("\r\nThere was a connection problem. Check wiring/PCB ");
+			while(1);
 		}
 		word recv;
 		if (ERR_OK != I2C_RecvBlock(&acc_data, 6, &recv)) {
@@ -125,10 +127,10 @@ int main(void)
 		float accY = (signed short)(acc_data[2]<<8| acc_data[3]) * 1.0;
 		float accZ = (signed short)(acc_data[4]<<8| acc_data[5]) * 1.0;
 
-		// 131 converts to deg/s as per section 4.2 of MPU6050 datasheet
-		float gyroX = 1.0 + (signed short)(gyro_data[0]<<8 | gyro_data[1])/131.0; // ~-1deg/s error on breakout board
-		float gyroY = (signed short)(gyro_data[2]<<8 | gyro_data[3])/131.0;
-		float gyroZ = 1.0 + (signed short)(gyro_data[4]<<8 | gyro_data[5])/131.0; // ~-1deg/s error on breakout board
+		// dividing by 131 converts to deg/s as per section 4.2 of MPU6050 datasheet
+		float gyroX = 1.3 + (signed short)(gyro_data[0]<<8 | gyro_data[1])/131.0; // ~-1.3deg/s error on breakout board
+		float gyroY = 0.2 + (signed short)(gyro_data[2]<<8 | gyro_data[3])/131.0; // ~-0.2deg/s error on breakout board
+		float gyroZ = 0.9 + (signed short)(gyro_data[4]<<8 | gyro_data[5])/131.0; // ~-0.9deg/s error on breakout board - still some drift as no acc/mag component for breakout board
 
 
 		// convert accelerometer data to pitch and roll TODO: add a low pass filter
@@ -144,7 +146,7 @@ int main(void)
 		previousTime = time;
 
 		// calculate change in gyro angle
-		float gyroPitchChange = dt*gyroX;  // deg
+		float gyroPitchChange = dt*gyroX;
 		float gyroRollChange = dt*gyroY;
 		float gyroYawChange = dt*gyroZ;
 
@@ -160,7 +162,7 @@ int main(void)
 
 		if (abs(accPitch) < 5){
 			pitch = accPitch;
-			gyroPitch = accPitch; // eliminate gyro drift when accelerometer pitch is very small TODO: doesn't work properly; try w/ LPF
+			gyroPitch = accPitch; // eliminate gyro drift when accelerometer pitch is very small
 		}
 		if (abs(accRoll) < 5){
 			roll = accRoll;
@@ -177,7 +179,7 @@ int main(void)
 		sprintf(rollStr, "%d", (int)roll);
 		sprintf(yawStr, "%d", (int)yaw);
 
-		// send data TODO: convert creating & sending string into a separate function
+		// send data
 		send_string("\r\n");
 		send_string(pitchStr);
 		send_string("/");
